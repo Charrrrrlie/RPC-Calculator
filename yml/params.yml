@@ -1,0 +1,11 @@
+check_grid_m: 20
+check_grid_n: 20
+ctrl_grid_m: 10
+ctrl_grid_n: 10
+ctrl_layers: 6
+img_col: 8192
+img_row: 5378
+iter_time: 20
+max_height: 947
+min_height: 41
+threshold: 0.0015
