@@ -2,37 +2,9 @@
 
 ***卫星摄影测量课程大作业***
 
-利用严格相机模型<sup>1</sup>获得虚拟控制点,通过有理函数模型(RFM)<sup>2</sup>建立物方与像方关系，求解模型参数(RPC).
+利用严格相机模型获得虚拟控制点,通过有理函数模型(RFM)建立物方与像方关系，求解模型参数(RPC).
 
 代码RPC解算部分采用矩阵运算与多线程加速,有较高运行效率.
-
-严格相机模型<sup>1</sup>
-$$
-\begin{bmatrix}
-X \\
-Y \\
-Z \\
-\end{bmatrix}_{WGS84}=
-\begin{bmatrix}
-X_{GPS} \\
-Y_{GPS} \\
-Z_{GPS} \\
-\end{bmatrix}+\mu R(t)_{J2000}^{WGS84} R_{body}^{J2000}
-\begin{bmatrix}
-tan\psi_{y} \\
-tan\psi_{x} \\
--1 \\
-\end{bmatrix}
-$$
-
-有理函数模型<sup>2</sup>
-$$
-Row_{n}=\cfrac{p_1(X_n,Y_n,Z_n)}{p_{2}(X_n,Y_n,Z_n)}
-$$
-$$
-Col_{n}=\cfrac{p_3(X_n,Y_n,Z_n)}{p_{4}(X_n,Y_n,Z_n)}
-$$
-
 
 ## Requirements
 
@@ -83,11 +55,11 @@ MATLAB`dcmeci2ecef`函数计算旋转矩阵 存储至`intermediate_res/rot.txt`
 cal_rot_mat.m
 ```
 
-#### 从[巴黎天文台网站](https://hpiers.obspm.fr/eop-pc/index.php?index=matrice_php&lang=en)获取旋转矩阵$R_{J2000}^{WGS84}$
+#### 从[巴黎天文台网站](https://hpiers.obspm.fr/eop-pc/index.php?index=matrice_php&lang=en)获取J2000至WGS84旋转矩阵
 
 当前(2021.5.27)网站输入表单不可用 现提供批量处理Demo. 
 
-<small>ps:网站提供旋转矩阵为$R_{WGS84}^{J2000}$ 当前场景使用时需要转置</small>
+<small>ps:网站提供旋转矩阵为WGS84至J2000 当前场景使用时需要转置</small>
 
 ```
 python grab_matrix.py
