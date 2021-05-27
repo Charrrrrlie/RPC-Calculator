@@ -44,7 +44,7 @@ python precision_check.py
 
 
 
-#### 计算旋转矩阵$R_{J2000}^{WGS84}$ 并初始化yaml参数
+#### 计算J2000至WGS84旋转矩阵 并初始化yaml参数
 
 由python计算扫描行对应`UTC time` 初始化`yml/params.yml` 
 ```
